@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+       *{
+           box-sizing:border-box;
+       }
+        body{
+            margin:0;
+        }
+        h1{
+            text-align:center;
+        }
+        .content> .pic{
+            padding:0 8px;
+        }
+        .pic{
+            float:left;
+            width:25%;
+        }
+        .pic1{
+            float:left;
+            width:33%;
+        }
+        .pic2{
+            float:left;
+            width:14%;
+        }
+        .content>.pic1{
+            padding:0 8px;
+        }
+        .content:after{
+            content:"";
+            display:table;
+            clear:both;
+        }
+        .contain-content{
+            display:none;
+            position:fixed;
+            z-index:1;
+            padding-top:100px;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            overflow:auto;
+            background-color:black;
+        }
+        .cha{
+            width:12px;
+            height:12px;
+            position:absolute;
+            top:5px;
+            right:10px;
+            font-weight:bold;
+            color:white;
+        }
+        .wrap{
+            position:relative;
+            width:90%;
+            padding:0;
+            margin:auto;
+            background-color:#fefefe;
+            max-width:1200px;
+
+        }
+        .cha:hover,.cha:focus{
+            color:orange;
+            text-decoration:none;
+            cursor:pointer;
+        }
+        .numberText{
+            position:absolute;
+            top:0;
+            left:2px;
+            font-size:12px;
+        }
+        .wrap-content{
+            display:none;
+        }
+        img {
+            margin-bottom:-4px;
+        }
+        .text{
+            color:white;
+            text-align:center;
+            background-color:black;
+            padding:2px 16px;
+        }
+        .up,.down{
+            position:absolute;
+            top:50%;
+            width:auto;
+            padding-top:-50px;
+            color:black;
+            font-weight:bold;
+            font-size:50px;
+            border-radius:0 3px 3px 0;
+            transition:0.6s ease;
+            user-select:none;
+            -webkit-user-select:none;
+        }
+        .down{
+            right:0;
+            border-radius:3px 0 0 3px;
+        }
+        .up:hover,.down:hover{
+            background-color:black;
+        }
+        .demo{
+            opacity:0.6;
+            float:left;
+            width:25%;
+        }
+        .active,
+        .demo:hover{
+            opacity:1;
+        }
+        .shadow:hover{
+            box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        .shadow{
+            transition:0.3s;
+        }
+
+    </style>
+    <script>
+     function openModal(){
+         document.getElementById("contain").style.display="block";
+     }
+     function closeModal(){
+         document.getElementById("contain").style.display="none";
+     }
+     var slideIndex=1;
+     showSlides(slideIndex);
+
+     function plusSlides(n) {
+         showSlides(slideIndex += n);
+     }
+     function currentSlides(n){
+         showSlides(slideIndex=n);
+     }
+     function showSlides(n){
+         var i;
+         var slides= document.getElementsByClassName("wrap-content");
+         var dots= document.getElementsByClassName("demo");
+         var captionText= document.getElementById("text2");
+         if( n> slides.length){slideIndex=1}
+         if( n< 1){slideIndex=slides.length}
+         for(i=0;i<slides.length;i++){
+             slides[i].style.display="none";
+         }
+         for(i=0;i<dots.length;i++){
+             dots[i].className= dots[i].className.replace(" active","");
+         }
+         slides[slideIndex-1].style.display="block";
+         dots[slideIndex-1].className += " active";
+         captionText.innerHTML=dots[slideIndex-1].alt;
+     }
+    </script>
+</head>
+<body>
+<h1>营期</h1>
+<div class="content">
+    <div class="pic">
+        <img src="images\1.jpg" alt="1" style="width:100%;height:300px" class="shadow" onclick="openModal();currentSlides(1)">
+    </div>
+    <div class="pic" >
+        <img src="images\2.jpg" alt="2" style="width:100%;height:300px" class="shadow" onclick="openModal();currentSlides(2)">
+    </div>
+    <div class="pic" >
+        <img src="images\3.jpg" alt="3" style="width:100%;height:300px" class="shadow" onclick="openModal();currentSlides(3)">
+    </div>
+        <div class="pic" >
+            <img src="images\4.jpg" alt="4" style="width:100%;height:300px" class="shadow" onclick="openModal();currentSlides(4)">
+        </div>
+        <div class="pic1">
+            <img src="images\5.jpg" alt="5" style="width:100%;height:300px" class="shadow" onclick="openModal();currentSlides(5)">
+        </div>
+        <div class="pic1">
+            <img src="images\6.jpg" alt="6" style="width:100%;height:300px" class="shadow" onclick="openModal();currentSlides(6)">
+        </div>
+        <div class="pic1">
+            <img src="images\7.jpg" alt="7" style="width:100%;height:300px" class="shadow" onclick="openModal();currentSlides(7)">
+        </div>
+    </div>
+    <div id="contain" class="contain-content">
+        <span class="cha"  onclick="closeModal()">&times;</span>
+        <div class="wrap">
+            <div class="wrap-content">
+                <div class="numberText">1/ 7</div>
+                <img src="images\1.jpg" alt="1" style="width:100%;height:600px">
+            </div>
+            <div class="wrap-content">
+                <div class="numberText">2/ 7</div>
+                <img src="images\2.jpg" alt="2" style="width:100%;height:600px">
+            </div>
+    <div class="wrap-content">
+        <div class="numberText">3/ 7</div>
+        <img src="images\3.jpg" alt="1" style="width:100%;height:600px">
+    </div>
+    <div class="wrap-content">
+        <div class="numberText">4/ 7</div>
+        <img src="images\4.jpg" alt="1" style="width:100%;height:600px">
+    </div>
+                <div class="wrap-content">
+                    <div class="numberText">5/ 7</div>
+                    <img src="images\5.jpg" alt="1" style="width:100%;height:600px">
+                </div>
+                <div class="wrap-content">
+                    <div class="numberText">6/ 7</div>
+                    <img src="images\6.jpg" alt="1" style="width:100%;height:600px">
+                </div>
+                <div class="wrap-content">
+                    <div class="numberText">7/ 7</div>
+                    <img src="images\7.jpg" alt="1" style="width:100%;height:600px">
+                </div>
+    <a class="up" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="down" onclick="plusSlides(1)">&#10095;</a>
+    <div class="text">
+        <p id="text2"></p></div>
+
+    <div class="pic2">
+        <img src="images\1.jpg" alt="1" class="demo" onclick="currentSlides(1)" style="width:100%;height:300px">
+    </div>
+        <div class="pic2">
+        <img src="images\2.jpg" alt="2" class="demo" onclick="currentSlides(2)" style="width:100%;height:300px">
+        </div>
+        <div class="pic2">
+        <img src="images\3.jpg" alt="3" class="demo" onclick="currentSlides(3)" style="width:100%;height:300px">
+        </div>
+        <div class="pic2">
+        <img src="images\4.jpg" alt="4" class="demo" onclick="currentSlides(4)" style="width:100%;height:300px">
+        </div>
+                <div class="pic2">
+                    <img src="images\5.jpg" alt="5" class="demo" onclick="currentSlides(5)" style="width:100%;height:300px">
+                </div>
+                <div class="pic2">
+                    <img src="images\6.jpg" alt="6" class="demo" onclick="currentSlides(6)" style="width:100%;height:300px">
+                </div>
+                <div class="pic2">
+                    <img src="images\7.jpg" alt="7" class="demo" onclick="currentSlides(7)" style="width:100%;height:300px">
+                </div>
+    </div>
+
+    </div>
+</div>
+</body>
+</html>
