@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>技能书首页</title>
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        .banner{
+            background-image:url("images/banner.png");
+            background-size:100% 100%;
+            background-repeat:no-repeat;
+            position:relative;
+            height:300px;
+        }
+        .leftarrow{
+            width:1rem;
+            position:absolute;
+            top:50%;
+            left:0;
+        }
+        .rightarrow{
+            width:1rem;
+            position:absolute;
+            top:50%;
+            right:0;
+        }
+        .banner-info{
+            width:50%;
+            margin:0 auto;
+            text-align:center;
+            position:relative;
+        }
+        .text1{
+            margin:0 auto;
+            text-align:center;
+            height:300px;
+            position:relative;
+        }
+        .text1 p{
+            color:white;
+            width:80%;
+            margin:-1rem auto 0;
+            line-height:1.8em;
+            position:absolute;
+            top:50%;
+            left:0;
+            right:0;
+        }
+        section{
+            padding:30px 0px;
+        }
+        .images{
+            position:relative;
+            height:80px;
+            display:flex;
+            justify-content:center;
+            align-items:flex-start;
+        }
+        .img1{
+            position:absolute;
+            top:0;
+        }
+        .num{
+          margin:10% 20%;
+            display:flex;
+            justify-content:center;
+            align-items:flex-start;
+        }
+        .wrapnum{
+            height:100%;
+        }
+        .num1{
+            height:30px;
+        }
+        .num1 img{
+            float:left;
+            padding:0 3px 0 0;
+        }
+        .num1 p{
+            font-size:.4rem;
+            color:green;
+        }
+        .text2{
+            height:30px;
+            width:60%;
+            margin:0 auto 3px;
+            text-align:center;
+            font-weight:bold;
+            margin-top:20px;
+        }
+        .circle{
+            width:4.5rem;
+            height:4.5rem;
+            line-height:4.5rem;
+            border-radius:50%;
+            text-align:center;
+            background-color:lightgrey;
+        }
+        .text3{
+            font-size:8px;
+            float:left;
+            line-height:30px;
+
+        }
+        .text3:after{
+            content:"";
+            display:block;
+            border-color: transparent transparent transparent green;
+            position:absolute;
+            top:50%;
+            right:0;
+            border-width:8px 8px 8px 8px;
+            border-style:solid;
+        }
+        .text3 p{
+            margin:0;
+        }
+        .wrapcircle{
+            float:left;
+            vertical-align:middle;
+            margin-right:2rem;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:59.2px;
+        }
+        .wrap{
+            width:100%;
+            height:100%;
+            zoom:1;
+            display:flex;
+            justify-content:center;
+            align-items:flex-start;
+            margin-top:5%;
+        }
+        .wrap:after{
+            content:"";
+            display:block;
+            height:0;
+            clear:both;
+        }
+        .nav-default{
+            padding:18px 0;
+            background:transparent;
+            color:black;
+        }
+        .navbar-fixed{
+            z-index:9999;
+            position:fixed;
+            top:0;
+            width: 100%;
+            animation:fadeInDown 800ms;
+        }
+        .navbar-collapse{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .navbar-nav{
+            margin-right:25px;
+        }
+        ul li{
+            list-style:none;
+            padding:20px;
+            margin:0;
+        }
+        .touxiang{
+            height:75px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .text4{
+            margin:2px 20%;
+            font-size:8px;
+            color:grey;
+        }
+        .qiye{
+            width:20%;
+            height:100px;
+            padding:0;
+            margin:0;
+            float:left;
+        }
+        .qiyeimg{
+            margin:5% 5%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .col-md-12:after{
+            content:"";
+            display:block;
+            height:0;
+            clear:both;
+        }
+        .qiye:hover{
+            box-shadow:1px 1px 1px 0 #999999;
+        }
+    </style>
+</head>
+<body>
+<header class="site-navigation navigation navbar-fixed">
+    <nav class="nav-default">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <a href="#" class="navbar-brand">
+                            <h3>
+                                "Tour +"
+                            </h3>
+                        </a>
+                        <button class="navbar-toggler" type="button"  data-target="#navcenter">
+                        </button>
+                        <div class="navbar-collapse" id="navcenter">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown avtive">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        home
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">home1</a>
+                                        <a class="dropdown-item" href="#">home2</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">eric</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">ianto</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                        yang
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">zhong</a>
+                                        <a class="dropdown-item" href="#">cong</a>
+                                        <a class="dropdoen-item" href="#">guozi</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">white</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </nav>
+</header>
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="banner-info">
+                    <div class="text1">
+                    <p>作为你一个初级菜鸟，你是否想要了解50万年薪的程序员，都会那些技能？</p></div>
+                    <img src="images/leftarrow.png" alt="1" class="leftarrow">
+                    <img src="images/rightarrow.png" alt="2" class="rightarrow">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-12" >
+                <div class="images"><img src="images/archive.png" alt="1" class="img1"></div>
+                <h5 style="text-align:center;">高效</h5>
+                <p style="text-align:center;font-size:10px;color:lightgrey;">将五到七年的成长时间，缩短到一年到三年</p>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="images"><img src="images/rocket.png" alt="1" class="img1"></div>
+                <h5 style="text-align:center;">规范</h5>
+                <p style="text-align:center;font-size:10px;color:lightgrey;">标准的实战教程，不会走弯路</p>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="images"><img src="images/shape.png" alt="1" class="img1"></div>
+                <h5 style="text-align:center;">人脉</h5>
+                <p style="text-align:center;font-size:10px;color:lightgrey;">同伴好友，同院成长，技术大师，入学就混入职脉圈，为以后铺平道路。</p>
+            </div>
+            <div class="col-md-3 col-sm-12" style="border-left:1px dashed black;">
+                <div class="num">
+                    <div class="wrapnum">
+                    <div class="num1"><img src="images/rentou.png" alt="1"><p>12400</p></div>
+                    <div class="num1"><p style="color:lightgrey;">累计在线学习人数</p></div>
+                    <div class="num1"><img src="images/rentou.png" alt="1"><p>12400</p></div>
+                    <div class="num1"><p style="color:lightgrey;">学员已经找到满意工作</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text2">
+                    <p>如何学习</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="wrap">
+                <div class="wrapcircle"><div class="circle">1</div></div>
+                <div class="text3"><p>匹配你现在的个人情况</p><p>寻找适合自己的岗位</p></div></div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="wrap">
+                <div class="wrapcircle"><div class="circle">2</div></div>
+                <div class="text3"><p>匹配你现在的个人情况</p><p>寻找适合自己的岗位</p></div></div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="wrap">
+                <div class="wrapcircle"><div class="circle">3</div></div>
+                    <div class="text3"><p>匹配你现在的个人情况</p><p>寻找适合自己的岗位</p></div></div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="wrap">
+                <div class="wrapcircle"><div class="circle">4</div></div>
+                <div class="text3"><p>匹配你现在的个人情况</p><p>寻找适合自己的岗位</p></div></div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="wrap">
+                    <div class="wrapcircle"><div class="circle">5</div></div>
+                    <div class="text3"><p>匹配你现在的个人情况</p><p>寻找适合自己的岗位</p></div></div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="wrap">
+                    <div class="wrapcircle"><div class="circle">6</div></div>
+                    <div class="text3"><p>匹配你现在的个人情况</p><p>寻找适合自己的岗位</p></div></div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="wrap">
+                    <div class="wrapcircle"><div class="circle">7</div></div>
+                    <div class="text3"><p>匹配你现在的个人情况</p><p>寻找适合自己的岗位</p></div></div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="wrap">
+                    <div class="wrapcircle"><div class="circle">8</div></div>
+                    <div class="text3"><p>匹配你现在的个人情况</p><p>寻找适合自己的岗位</p></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div  class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin-bottom:10px;margin-top:-10px;">
+                <div class="text2">
+                    <p>优秀学员展示</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" style="box-shadow:0 -2px 1px grey, -2px 1px 1px grey, 2px 1px 1px grey, 1px 2px 1px grey;">
+                <div class="touxiang">
+                    <img src="images/pic1.png" alt="rentou" height="75px">
+                </div>
+                <div class="text2">
+                    <p>技术顾问：罗大佑</p>
+                </div>
+                <div class="text4">
+                    <p>百度技术总监；互联网基础服务领域，从事虚拟主机、云服务器、域名、曾任新网高级技术总监，负责技术研发，团队建设与管理。</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="touxiang">
+                    <img src="images/pic1.png" alt="rentou"height="75px" >
+                </div>
+                <div class="text2">
+                    <p>技术顾问：罗大佑</p>
+                </div>
+                <div class="text4">
+                    <p>百度技术总监；互联网基础服务领域，从事虚拟主机、云服务器、域名、曾任新网高级技术总监，负责技术研发，团队建设与管理。</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="touxiang">
+                    <img src="images/pic1.png" alt="rentou"height="75px">
+                </div>
+                <div class="text2">
+                    <p>技术顾问：罗大佑</p>
+                </div>
+                <div class="text4">
+                    <p>百度技术总监；互联网基础服务领域，从事虚拟主机、云服务器、域名、曾任新网高级技术总监，负责技术研发，团队建设与管理。</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="touxiang">
+                    <img src="images/pic1.png" alt="rentou"height="75px">
+                </div>
+                <div class="text2">
+                    <p>技术顾问：罗大佑</p>
+                </div>
+                <div class="text4">
+                    <p>百度技术总监；互联网基础服务领域，从事虚拟主机、云服务器、域名、曾任新网高级技术总监，负责技术研发，团队建设与管理。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="margin-bottom:10px;margin-top:-10px;">
+                <div class="text2">
+                    <p>战略合作企业</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="qiye">
+                    <div class="qiyeimg"><img src="images/pic2.png" alt="2" height="75px"></div>
+                </div>
+                <div class="qiye">
+                    <div class="qiyeimg"><img src="images/pic2.png" alt="2"height="75px"></div>
+                </div>
+                <div class="qiye">
+                    <div class="qiyeimg"><img src="images/pic2.png" alt="2"height="75px"></div>
+                </div>
+                <div class="qiye">
+                    <div class="qiyeimg"><img src="images/pic2.png" alt="2"height="75px"></div>
+                </div>
+                <div class="qiye">
+                    <div class="qiyeimg"><img src="images/pic2.png" alt="2"height="75px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
