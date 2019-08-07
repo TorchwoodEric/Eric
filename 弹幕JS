@@ -1,0 +1,17 @@
+ function fashe(){
+    var ct = document.getElementById("danmu").value//获得输入的文本
+    var text1 = document.createElement("span")//创建滚动span
+    text1.innerHTML = ct//将输入文本放入span
+    document.getElementById("boxDom").appendChild(text1)//插入span
+   // 改变span样式，设置动画
+    text1.style.color='rgb('+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+')'
+    text1.style.position = 'absolute'
+    text1.style.top = Math.random()*50+'%'
+    text1.style.left = 80+'%'
+    text1.style.webkitAnimation = 'danmu 5s linear  1' 
+    //动画完成删除span,监听动画结束，回调
+    text1.addEventListener('webkitAnimationEnd',function(){
+       document.getElementById('boxDom').removeChild(text1)
+    })
+
+ }
