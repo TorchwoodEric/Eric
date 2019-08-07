@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:10%;
+    background-color:grey;
+}
+.content{
+    width:50%;
+    height:100%;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    width:100%;
+    text-align:center;
+
+}
+#boxDom{
+    width:100%;
+    height:800px;
+    background-color:lightgrey;
+}
+@keyframes danmu{
+    from{
+        left: 80%;
+    }
+    to{
+        left:-10px;
+    }
+}
