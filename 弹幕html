@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="弹幕.css">
+    <script src="弹幕.js"></script>
+</head>
+<body>
+    <!-- 弹幕区 -->
+    <div id="boxDom"></div>
+    <!-- 发射区 -->
+    <div class="wrap">
+        <div class="content">
+            <form class="form">
+                <label>吐槽：</label>
+                <input type="text" id="danmu">
+                <input type="button" value="发射" onclick="fashe()">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
